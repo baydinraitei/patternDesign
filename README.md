@@ -1,1 +1,3 @@
 # patternDesignC-
+
+#Initialisation repo
