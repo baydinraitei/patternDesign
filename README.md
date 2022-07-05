@@ -60,7 +60,7 @@ Ce pattern est utilisé pour séparer l'implémentation d'un cas spécifique de 
 
 ConstructeurAbstrait
 
-ConstructeurLiasseVéhiculeHtml et ConstructeurLiasseVehiculePdf correspondent à ConstructeurConcret
+ConstructeurLiasseVéhiculec# et ConstructeurLiasseVehiculec correspondent à ConstructeurConcret
 
 
 Factory method
@@ -79,94 +79,65 @@ il s'agit d un modèle de création qui utilise des méthodes d'usine pour trait
 
 Singleton
 
+// Le pattern singleton est uttilisé pour créer une instance unique d'une classe
+//Pattern Abstract est susceptible d'uttiliser ce type d'instance unique 
+//Notre application va uttiliser la classe liasse vierge(liasseVierge) qui ne possédera qu'une seule instance
+//Chaque classe doit avoir accés a la meme instance et on ne peut pas en crée une nouvelle
+// 
+![Schéma UML 12](img/singleton.png)
+
 
 En génie logiciel, le singleton est un patron de conception (design pattern), appartenant à la catégorie des patrons de création, dont l'objectif est de restreindre l'instanciation d'une classe à un seul objet. On fournira alors un accès global à celui-ci. Il s'agit d'un des patrons de création les plus simples mais les plus couramment utilisés. 1
 
 Il est utilisé lorsqu'on a besoin d'exactement un objet pour coordonner des opérations dans un système. Le modèle est parfois utilisé pour son efficacité, lorsque le système est plus rapide ou occupe moins de mémoire avec un seul objet qu'avec beaucoup d'objets similaires.
 
-Exemple : 
+using System;
 
-
-Voici une class template écrite en D du pattern singleton :
-
-class Singleton(T)  
+namespace RefactoringGuru.DesignPatterns.Singleton.Conceptual.NonThreadSafe
 {
-	public
-	{
-		static T getSingleton() 
-		{
 
-			if(_instance is null) 
-				_instance = new T;
-			
-			return _instance;
-		}
-	}
-	private
-	{
-		this()
-		{
-		     	_instance = cast(T) this;
-		}
-		~this()
-		{}
-	
-		static T _instance; 
-	}
-}
-Java
+    public sealed class Singleton
+    {
 
-
- // La classe est finale, car un singleton n'est pas censé avoir d'héritier.
- public final class Singleton {
-
-     // L'utilisation du mot clé volatile, en Java version 5 et supérieure,
-     // empêche les effets de bord dus aux copies locales de l'instance qui peuvent être modifiées dans le thread principal.
-     // De Java version 1.2 à 1.4, il est possible d'utiliser la classe ThreadLocal.
-     private static volatile Singleton instance = null;
- 
-     // D'autres attributs, classiques et non "static".
-     private String xxx;
-     private int zzz;
-
-     /**
-      * Constructeur de l'objet.
-      */
-     private Singleton() {
-         // La présence d'un constructeur privé supprime le constructeur public par défaut.
-         // De plus, seul le singleton peut s'instancier lui-même.
-         super();
-     }
-     
-     /**
-      * Méthode permettant de renvoyer une instance de la classe Singleton
-      * @return Retourne l'instance du singleton.
-      */
-     public final static Singleton getInstance() {
-         //Le "Double-Checked Singleton"/"Singleton doublement vérifié" permet 
-         //d'éviter un appel coûteux à synchronized, 
-         //une fois que l'instanciation est faite.
-         if (Singleton.instance == null) {
-            // Le mot-clé synchronized sur ce bloc empêche toute instanciation
-            // multiple même par différents "threads".
-            // Il est TRES important.
-            synchronized(Singleton.class) {
-              if (Singleton.instance == null) {
-                Singleton.instance = new Singleton();
-              }
+        public static Singleton GetInstance()
+        {
+            if (_instance == null)
+            {
+                _instance = new Singleton();
             }
-         }
-         return Singleton.instance;
-     }
+            return _instance;
+        }
 
-     // D'autres méthodes classiques et non "static".
-     public void faireXxx(...) {
-       ...
-       this.xxx = "bonjour";
-     }
+        public void vendeur()
+        {
+            // ...
+        }
+    }
 
-     public void faireZzz(...) {
-       ...
-     }
-    
- }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // The client code.
+            Singleton s1 = Singleton.GetInstance();
+            Singleton s2 = Singleton.GetInstance();
+
+            if (s1 == s2)
+            {
+                Console.WriteLine("Singleton works");
+            }
+            else
+            {
+                Console.WriteLine("Singleton failed");
+            }
+        }
+    }
+}
+
+ Le pattern prototype 
+
+ Ce partern permet la creation d'objet à partir d'autre objets appelées prototypes disposent d'une méthode Clone() qui retourne un objet identique 
+
+ ![Schéma UML 13](img/prototype.png)
+
+
