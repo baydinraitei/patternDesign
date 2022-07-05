@@ -141,3 +141,16 @@ namespace RefactoringGuru.DesignPatterns.Singleton.Conceptual.NonThreadSafe
  ![Schéma UML 13](img/prototype.png)
 
 
+Pattern de struture ou de structuration 
+
+Intro  
+
+Les patterns de structuration permettent de permettent de faciliter l'indépendance de li'interface d'un objet et de son implémentation
+En fournissant l'interface ce pattern permet d'encapsuler la composition des objets
+
+=> cela augment le niveau d'abstraction d'un systeme donné à la manière des patterns de création qui encapsulent la création d'objet
+Ces pattern mettent en avant les interfaces
+
+Différence entre Composition et Héritage 
+
+Héritage est-une relation entre les classes toutefois la Composition contient une référence aux classes de composition et la relation est donc vaguement liée. ainsi pour l'Héritage L'objet de la classe fille porte la définition de la classe mère en soi et donc étroitement liée.
