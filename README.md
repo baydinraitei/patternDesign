@@ -62,7 +62,6 @@ ConstructeurAbstrait
 
 ConstructeurLiasseVéhiculec# et ConstructeurLiasseVehiculec correspondent à ConstructeurConcret
 
-
 Factory method
 Généraliser la construction Builder pour préparer la création d'objet
 
@@ -72,18 +71,17 @@ Version générique vue en cours
 
 ![Schéma UML 6](img/factory_method_2.png)
 
-Version concrète vue en cours
 il s'agit d un modèle de création qui utilise des méthodes d'usine pour traiter le problème de la création d'objets sans avoir à spécifier la classe exacte de l'objet qui sera créé. Cela se fait en créant des objets en appelant une méthode de fabrique - soit spécifiée dans une interface et implémentée par des classes enfants, soit implémentée dans une classe de base et éventuellement remplacée par des classes dérivées - plutôt qu'en appelant un constructeur .
 
 ![Schéma UML 7](img/factory_method2.png)
 
 Singleton
 
-// Le pattern singleton est uttilisé pour créer une instance unique d'une classe
-//Pattern Abstract est susceptible d'uttiliser ce type d'instance unique 
-//Notre application va uttiliser la classe liasse vierge(liasseVierge) qui ne possédera qu'une seule instance
-//Chaque classe doit avoir accés a la meme instance et on ne peut pas en crée une nouvelle
-// 
+Le pattern singleton est uttilisé pour créer une instance unique d'une classe
+Pattern Abstract est susceptible d'uttiliser ce type d'instance unique 
+Notre application va uttiliser la classe liasse vierge(liasseVierge) qui ne possédera qu'une seule instance
+Chaque classe doit avoir accés a la meme instance et on ne peut pas en crée une nouvelle
+
 ![Schéma UML 12](img/singleton.png)
 
 
@@ -154,3 +152,7 @@ Ces pattern mettent en avant les interfaces
 Différence entre Composition et Héritage 
 
 Héritage est-une relation entre les classes toutefois la Composition contient une référence aux classes de composition et la relation est donc vaguement liée. ainsi pour l'Héritage L'objet de la classe fille porte la définition de la classe mère en soi et donc étroitement liée.
+
+Lee but de ce pattern  est de convertir l'interface d'une classe donnée en une interface attendue par des client afin qu'ils puissent travailler ensemble, en résumé il permet de donnée à une classe existante une nouvelle interface pour répondre au besoin client 
+
+![Schéma UML 14](img/adapter.png)
