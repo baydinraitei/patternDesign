@@ -53,7 +53,6 @@ Création d'objets complexes sans avoir à s'occuper des problèmes d'implément
 
 
 ![Schéma UML 3](img/abstract_factory.png)
-![Schéma UML 4](img/abstract_factory.png)
 
 
 Ce pattern est utilisé pour séparer l'implémentation d'un cas spécifique de la logique/ du client.
@@ -156,3 +155,60 @@ Héritage est-une relation entre les classes toutefois la Composition contient u
 Lee but de ce pattern  est de convertir l'interface d'une classe donnée en une interface attendue par des client afin qu'ils puissent travailler ensemble, en résumé il permet de donnée à une classe existante une nouvelle interface pour répondre au besoin client 
 
 ![Schéma UML 14](img/adapter.png)
+
+
+BRIDGE 
+
+![Schéma UML 15](img/bridge.png)
+
+Le partern bridge est uttilisé pour séparer le comportement de l'implémentation d l'interface et l'implémentation de l'objet.
+On s'intéresse ici au demande d'immatriculation des véhicules.
+ 
+ Le formulaire de demande d'immatriculation possède deux implémentation différentes : FormulaireImmatHTML , FormulaireImatAPP
+
+ Au départ le système à été concu pour la france uniquement, ensuite on du crée une sous-classe formulaireImatCH elle aussi abstraite pour avoir également deux sous-classes concrètes ( qui spt FormulaireImmatHTML et formulaireImatAPP dédié à la suisse)
+
+![Schéma UML 15](img/bridge2.png)
+
+
+Composite 
+
+Ce pattern  offre un cadre de conception d'une composition d'objets dont on ne connait pas la profondeurs, (On peut uttiliser un arbre qu'analogie)
+Les "clients" interagissent avec les objets sans connaitre la structure de l'arbre 
+
+
+![Schéma UML 17](img/composite.png)
+
+
+Le pattern Decorateur 
+
+Ce pattern permet d'ajouter Dynamiqquement des fonctionnalités SUPL2MENTAIRE à un objet sans modifier l'interface de l'objet ("les client de l'objet ne sont pas au courant de la modification")
+
+Il s'agit d'une alternative à la création d'une sous-classe qui permettraot d'enrichir l'objet
+
+
+![Schéma UML 17](img/decorateur.png)
+
+Pattern de comportement 
+
+Les patterns de comportement distribuent les algorithmes/traitement entre les objets, ils organisent les interaction en renseignant le "flux de controle" et de traitement au sein d'un systeme d'objets
+
+La distribution se fait soit par Héritagé soit par "délégation"
+
+Le pattern Chain of Responsability 
+
+![Schéma UML 18](img/chainofresponsabiity.png)
+
+
+Le but est de construire une chaine d'objet de manière à ce que si un objet de la chaine ne peut répondre à une requête, il puisse le passé à un successeur et ainsi de suite jusqu'a l'un des ojets puissent y répondre 
+
+![Schéma UML 19](img/chainofresponsabiity2.png)
+
+![Schéma UML 20](img/chainofresponsabiity3.png)
+
+
+Le pattern Command
+
+Ce pattern transforme une requête en objet, ceci facilite els opération relative à la requête ex: Annulation, queue , suivi, ect...
+
+![Schéma UML 20](img/command.png)
