@@ -182,7 +182,7 @@ Les "clients" interagissent avec les objets sans connaitre la structure de l'arb
 
 Le pattern Decorateur 
 
-Ce pattern permet d'ajouter Dynamiqquement des fonctionnalités SUPL2MENTAIRE à un objet sans modifier l'interface de l'objet ("les client de l'objet ne sont pas au courant de la modification")
+Ce pattern permet d'ajouter Dynamiqquement des fonctionnalités SUPLEMENTAIRE à un objet sans modifier l'interface de l'objet ("les client de l'objet ne sont pas au courant de la modification")
 
 Il s'agit d'une alternative à la création d'une sous-classe qui permettraot d'enrichir l'objet
 
@@ -209,6 +209,15 @@ Le but est de construire une chaine d'objet de manière à ce que si un objet de
 
 Le pattern Command
 
-Ce pattern transforme une requête en objet, ceci facilite els opération relative à la requête ex: Annulation, queue , suivi, ect...
+Ce pattern transforme une requête en objet, ceci facilite les opérations relatives à la requête ex: Annulation, queue , suivi, ect...
 
-![Schéma UML 20](img/command.png)
+![Schéma UML 21](img/command.png)
+
+Mediator
+
+Son but c'est de construire un objet
+L'objet son role c'est de gréer controler les interactions entre les autres objets
+Les objets ne sont pas censés se connaître entre eux
+Il s'occupe de la gestion
+
+![Schéma UML 22](img/mediator.png)
