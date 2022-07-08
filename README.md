@@ -1,4 +1,7 @@
-# patternDesignC-
+
+AUTHOR HASSEN BAHA-EDDINE
+#Synopsis Design Pattern POO
+# patternDesignC#
 
 #Initialisation repo
 
